@@ -3,7 +3,9 @@ package com.huayu.study.springStudy.main;
 import com.huayu.study.springStudy.biz.IUserService;
 import com.huayu.study.springStudy.config.ConfigMain;
 import com.huayu.study.springStudy.core.IUserCoreService;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
  * Created by zhaohuayu on 16/12/27.
@@ -20,6 +22,9 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
+        ApplicationContext applicationContext =new FileSystemXmlApplicationContext("");
+
+
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConfigMain.class) ;
         //按类型获取
         //IUserService userService = context.getBean(IUserService.class) ;
